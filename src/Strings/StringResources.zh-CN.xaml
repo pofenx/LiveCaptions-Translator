@@ -1,0 +1,101 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <sys:String x:Key="App_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">实时字幕翻译</sys:String>
+    <sys:String x:Key="Nav_Caption" xmlns:sys="clr-namespace:System;assembly=mscorlib">字幕</sys:String>
+    <sys:String x:Key="Nav_Setting" xmlns:sys="clr-namespace:System;assembly=mscorlib">设置</sys:String>
+    <sys:String x:Key="Nav_History" xmlns:sys="clr-namespace:System;assembly=mscorlib">历史记录</sys:String>
+
+    <sys:String x:Key="Tooltip_CaptionLog" xmlns:sys="clr-namespace:System;assembly=mscorlib">字幕日志卡片</sys:String>
+    <sys:String x:Key="Tooltip_LogOnly" xmlns:sys="clr-namespace:System;assembly=mscorlib">暂停翻译（仅记录字幕）</sys:String>
+    <sys:String x:Key="Tooltip_Overlay" xmlns:sys="clr-namespace:System;assembly=mscorlib">悬浮字幕窗口</sys:String>
+    <sys:String x:Key="Tooltip_Topmost" xmlns:sys="clr-namespace:System;assembly=mscorlib">窗口置顶</sys:String>
+
+    <sys:String x:Key="Welcome_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">快速开始</sys:String>
+    <sys:String x:Key="Welcome_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">欢迎使用 字幕实时翻译 工具！</sys:String>
+    <sys:String x:Key="Welcome_Close" xmlns:sys="clr-namespace:System;assembly=mscorlib">我已了解并完成以上配置</sys:String>
+
+    <sys:String x:Key="Setting_LiveCaptions" xmlns:sys="clr-namespace:System;assembly=mscorlib">Windows 实时字幕</sys:String>
+    <sys:String x:Key="Setting_Frequency" xmlns:sys="clr-namespace:System;assembly=mscorlib">接口调用间隔</sys:String>
+    <sys:String x:Key="Setting_TranslateApi" xmlns:sys="clr-namespace:System;assembly=mscorlib">翻译接口</sys:String>
+    <sys:String x:Key="Setting_TargetLanguage" xmlns:sys="clr-namespace:System;assembly=mscorlib">目标语言</sys:String>
+    <sys:String x:Key="Setting_ApiSetting" xmlns:sys="clr-namespace:System;assembly=mscorlib">接口设置</sys:String>
+    <sys:String x:Key="Setting_DisplayLatency" xmlns:sys="clr-namespace:System;assembly=mscorlib">显示延迟</sys:String>
+    <sys:String x:Key="Setting_Contexts" xmlns:sys="clr-namespace:System;assembly=mscorlib">上下文句数</sys:String>
+    <sys:String x:Key="Setting_DisplaySentences" xmlns:sys="clr-namespace:System;assembly=mscorlib">显示句数</sys:String>
+    <sys:String x:Key="Setting_ContextAware" xmlns:sys="clr-namespace:System;assembly=mscorlib">上下文感知</sys:String>
+
+    <sys:String x:Key="Setting_LiveCaptionsInfo_1" xmlns:sys="clr-namespace:System;assembly=mscorlib">在 Windows 11 24H2 之后，你只能在 Windows 实时字幕中更改</sys:String>
+    <sys:String x:Key="Setting_LiveCaptionsInfo_SourceLanguage" xmlns:sys="clr-namespace:System;assembly=mscorlib">源语言（Source Language）</sys:String>
+    <sys:String x:Key="Setting_LiveCaptionsInfo_2" xmlns:sys="clr-namespace:System;assembly=mscorlib">。</sys:String>
+    <sys:String x:Key="Setting_LiveCaptionsInfo_NoticeTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">&#x0A;&#x0A;注意：</sys:String>
+    <sys:String x:Key="Setting_LiveCaptionsInfo_3" xmlns:sys="clr-namespace:System;assembly=mscorlib">请点击</sys:String>
+    <sys:String x:Key="Setting_LiveCaptionsInfo_Hide" xmlns:sys="clr-namespace:System;assembly=mscorlib">“隐藏（Hide）”</sys:String>
+    <sys:String x:Key="Setting_LiveCaptionsInfo_4" xmlns:sys="clr-namespace:System;assembly=mscorlib">来隐藏 Windows 实时字幕，而不是直接关闭窗口。</sys:String>
+
+    <sys:String x:Key="Setting_FrequencyInfo_1" xmlns:sys="clr-namespace:System;assembly=mscorlib">控制翻译接口调用频率。数值越小，调用越频繁。</sys:String>
+    <sys:String x:Key="Setting_FrequencyInfo_2" xmlns:sys="clr-namespace:System;assembly=mscorlib">&#x0A;在字幕变化</sys:String>
+    <sys:String x:Key="Setting_FrequencyInfo_IntervalTag" xmlns:sys="clr-namespace:System;assembly=mscorlib">[接口调用间隔]</sys:String>
+    <sys:String x:Key="Setting_FrequencyInfo_3" xmlns:sys="clr-namespace:System;assembly=mscorlib">次后调用一次翻译接口。</sys:String>
+
+    <sys:String x:Key="Setting_TranslateApiInfo" xmlns:sys="clr-namespace:System;assembly=mscorlib">除 Google 与 Google2 外，其他接口在使用前都需要先完成配置。</sys:String>
+
+    <sys:String x:Key="Setting_TargetLangInfo_Question" xmlns:sys="clr-namespace:System;assembly=mscorlib">“列表里没有我想要的目标语言！”</sys:String>
+    <sys:String x:Key="Setting_TargetLangInfo_1" xmlns:sys="clr-namespace:System;assembly=mscorlib">&#x0A;你可以直接编辑此下拉框的内容自定义语言，推荐遵循</sys:String>
+    <sys:String x:Key="Setting_TargetLangInfo_Bcp47" xmlns:sys="clr-namespace:System;assembly=mscorlib">BCP 47 语言标签。</sys:String>
+    <sys:String x:Key="Setting_TargetLangInfo_NoticeTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">&#x0A;&#x0A;注意：</sys:String>
+    <sys:String x:Key="Setting_TargetLangInfo_2" xmlns:sys="clr-namespace:System;assembly=mscorlib">部分接口（例如 DeepL）需要使用自己的方式指定目标语言，详情请参考对应接口的官方文档。</sys:String>
+    <sys:String x:Key="Setting_TargetLangInfo_3" xmlns:sys="clr-namespace:System;assembly=mscorlib">&#x0A;对于内置的目标语言，我们已经做了标签映射；如果你使用列表外的语言，请注意这一点。</sys:String>
+
+    <sys:String x:Key="Setting_ContextsInfo_TitleContexts" xmlns:sys="clr-namespace:System;assembly=mscorlib">上下文句数（Contexts）：</sys:String>
+    <sys:String x:Key="Setting_ContextsInfo_1" xmlns:sys="clr-namespace:System;assembly=mscorlib">启用“上下文感知”时，用于参与上下文翻译的句子数量。</sys:String>
+    <sys:String x:Key="Setting_ContextsInfo_TitleOverlay" xmlns:sys="clr-namespace:System;assembly=mscorlib">&#x0A;悬浮句数（Overlay Sentences）：</sys:String>
+    <sys:String x:Key="Setting_ContextsInfo_2" xmlns:sys="clr-namespace:System;assembly=mscorlib">开启“日志卡片”或悬浮窗口时，同时显示的句子数量（也决定悬浮窗口最多显示多少句字幕）。</sys:String>
+    <sys:String x:Key="Setting_ContextsInfo_NoticeTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">&#x0A;&#x0A;注意：</sys:String>
+    <sys:String x:Key="Setting_ContextsInfo_3" xmlns:sys="clr-namespace:System;assembly=mscorlib">上下文句数必须</sys:String>
+    <sys:String x:Key="Setting_ContextsInfo_GreaterOrEqual" xmlns:sys="clr-namespace:System;assembly=mscorlib">大于或等于</sys:String>
+    <sys:String x:Key="Setting_ContextsInfo_4" xmlns:sys="clr-namespace:System;assembly=mscorlib">显示句数；如果不满足，程序会自动进行调整。</sys:String>
+
+    <sys:String x:Key="Setting_ContextAwareInfo_1" xmlns:sys="clr-namespace:System;assembly=mscorlib">基于上下文进行翻译。</sys:String>
+    <sys:String x:Key="Setting_ContextAwareInfo_2" xmlns:sys="clr-namespace:System;assembly=mscorlib">&#x0A;可以提升翻译准确度，但会消耗更多的 tokens。</sys:String>
+
+    <sys:String x:Key="Common_Show" xmlns:sys="clr-namespace:System;assembly=mscorlib">显示</sys:String>
+    <sys:String x:Key="Common_Hide" xmlns:sys="clr-namespace:System;assembly=mscorlib">隐藏</sys:String>
+    <sys:String x:Key="Common_Open" xmlns:sys="clr-namespace:System;assembly=mscorlib">打开</sys:String>
+    <sys:String x:Key="Common_On" xmlns:sys="clr-namespace:System;assembly=mscorlib">开</sys:String>
+    <sys:String x:Key="Common_Off" xmlns:sys="clr-namespace:System;assembly=mscorlib">关</sys:String>
+
+    <sys:String x:Key="Setting_UiLanguage" xmlns:sys="clr-namespace:System;assembly=mscorlib">界面语言</sys:String>
+
+    <sys:String x:Key="SettingWindow_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">接口设置</sys:String>
+    <sys:String x:Key="SettingWindow_Prompt" xmlns:sys="clr-namespace:System;assembly=mscorlib">提示词（Prompt）</sys:String>
+    <sys:String x:Key="SettingWindow_PromptInfo_Title1" xmlns:sys="clr-namespace:System;assembly=mscorlib">说明 1：</sys:String>
+    <sys:String x:Key="SettingWindow_PromptInfo_1" xmlns:sys="clr-namespace:System;assembly=mscorlib">提示词中的 {0} 代表目标语言，请确保你的提示词里包含 {0}。</sys:String>
+    <sys:String x:Key="SettingWindow_PromptInfo_Title2" xmlns:sys="clr-namespace:System;assembly=mscorlib">&#x0A;说明 2：</sys:String>
+    <sys:String x:Key="SettingWindow_PromptInfo_2" xmlns:sys="clr-namespace:System;assembly=mscorlib">源文本会被 🔤 符号包裹。</sys:String>
+
+    <sys:String x:Key="ApiName_Qwen" xmlns:sys="clr-namespace:System;assembly=mscorlib">千问（Qwen）</sys:String>
+    <sys:String x:Key="ApiConfig_Current" xmlns:sys="clr-namespace:System;assembly=mscorlib">当前配置：</sys:String>
+    <sys:String x:Key="ApiConfig_KeepOne" xmlns:sys="clr-namespace:System;assembly=mscorlib">至少需要保留一个配置。</sys:String>
+
+    <sys:String x:Key="Common_New" xmlns:sys="clr-namespace:System;assembly=mscorlib">新建</sys:String>
+    <sys:String x:Key="Common_Delete" xmlns:sys="clr-namespace:System;assembly=mscorlib">删除</sys:String>
+
+    <sys:String x:Key="ApiField_ModelName" xmlns:sys="clr-namespace:System;assembly=mscorlib">模型名称</sys:String>
+    <sys:String x:Key="ApiField_Temperature" xmlns:sys="clr-namespace:System;assembly=mscorlib">温度（Temperature）</sys:String>
+    <sys:String x:Key="ApiField_ApiUrl" xmlns:sys="clr-namespace:System;assembly=mscorlib">接口地址（API Url）</sys:String>
+    <sys:String x:Key="ApiField_ApiKey" xmlns:sys="clr-namespace:System;assembly=mscorlib">API 密钥（API Key）</sys:String>
+    <sys:String x:Key="ApiField_SourceLanguage" xmlns:sys="clr-namespace:System;assembly=mscorlib">源语言（Source Language）</sys:String>
+    <sys:String x:Key="ApiField_AppKey" xmlns:sys="clr-namespace:System;assembly=mscorlib">APP Key</sys:String>
+    <sys:String x:Key="ApiField_AppSecret" xmlns:sys="clr-namespace:System;assembly=mscorlib">APP Secret</sys:String>
+    <sys:String x:Key="ApiField_AppId" xmlns:sys="clr-namespace:System;assembly=mscorlib">APP ID</sys:String>
+
+    <sys:String x:Key="ApiField_ApiUrlInfo_Ollama_1" xmlns:sys="clr-namespace:System;assembly=mscorlib">无需手动添加 </sys:String>
+    <sys:String x:Key="ApiField_ApiUrlInfo_Ollama_2" xmlns:sys="clr-namespace:System;assembly=mscorlib"> 后缀。</sys:String>
+    <sys:String x:Key="ApiField_ApiUrlInfo_OpenAI_1" xmlns:sys="clr-namespace:System;assembly=mscorlib">请使用完整接口地址（通常以 </sys:String>
+    <sys:String x:Key="ApiField_ApiUrlInfo_OpenAI_2" xmlns:sys="clr-namespace:System;assembly=mscorlib"> 结尾），而不是仅以 </sys:String>
+    <sys:String x:Key="ApiField_ApiUrlInfo_OpenAI_3" xmlns:sys="clr-namespace:System;assembly=mscorlib"> 结尾的基础地址。</sys:String>
+    <sys:String x:Key="ApiField_ApiUrlInfo_Qwen_1" xmlns:sys="clr-namespace:System;assembly=mscorlib">通义千问使用 DashScope OpenAI 兼容接口，默认地址为 </sys:String>
+    <sys:String x:Key="ApiField_ApiUrlInfo_Qwen_2" xmlns:sys="clr-namespace:System;assembly=mscorlib">。</sys:String>
+
+</ResourceDictionary>

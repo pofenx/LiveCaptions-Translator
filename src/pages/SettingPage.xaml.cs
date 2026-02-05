@@ -13,6 +13,7 @@ namespace LiveCaptionsTranslator
     public partial class SettingPage : Page
     {
         private static SettingWindow? SettingWindow;
+        private bool ignoreUiLanguageSelectionChanged = false;
 
         public SettingPage()
         {
@@ -29,7 +30,33 @@ namespace LiveCaptionsTranslator
             TranslateAPIBox.ItemsSource = Translator.Setting?.Configs.Keys;
             TranslateAPIBox.SelectedIndex = 0;
 
+            InitializeUiLanguageBox();
+
             LoadAPISetting();
+        }
+
+        private void InitializeUiLanguageBox()
+        {
+            if (Translator.Setting == null)
+                return;
+
+            ignoreUiLanguageSelectionChanged = true;
+
+            UiLanguageBox.ItemsSource = new[]
+            {
+                "zh-CN",
+                "en-US"
+            };
+
+            var current = LocalizationManager.NormalizeCulture(Translator.Setting.UiCulture);
+            UiLanguageBox.SelectedItem = current;
+            if (UiLanguageBox.SelectedItem == null)
+            {
+                UiLanguageBox.SelectedItem = "zh-CN";
+                Translator.Setting.UiCulture = "zh-CN";
+            }
+
+            ignoreUiLanguageSelectionChanged = false;
         }
 
         private void LiveCaptionsButton_click(object sender, RoutedEventArgs e)
@@ -44,13 +71,43 @@ namespace LiveCaptionsTranslator
             if (isHide)
             {
                 LiveCaptionsHandler.RestoreLiveCaptions(Translator.Window);
-                ButtonText.Text = "Hide";
+                ButtonText.Text = (string)Application.Current.Resources["Common_Hide"];
             }
             else
             {
                 LiveCaptionsHandler.HideLiveCaptions(Translator.Window);
-                ButtonText.Text = "Show";
+                ButtonText.Text = (string)Application.Current.Resources["Common_Show"];
             }
+        }
+
+        private void UiLanguageBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (ignoreUiLanguageSelectionChanged)
+                return;
+            if (Translator.Setting == null)
+                return;
+            if (UiLanguageBox.SelectedItem == null)
+                return;
+
+            var culture = UiLanguageBox.SelectedItem.ToString();
+            if (string.IsNullOrWhiteSpace(culture))
+                return;
+
+            Translator.Setting.UiCulture = culture;
+            LocalizationManager.ApplyCulture(culture);
+
+            UpdateLiveCaptionsButtonText();
+        }
+
+        private void UpdateLiveCaptionsButtonText()
+        {
+            if (Translator.Window == null)
+                return;
+
+            bool isHide = Translator.Window.Current.BoundingRectangle == Rect.Empty;
+            ButtonText.Text = isHide
+                ? (string)Application.Current.Resources["Common_Show"]
+                : (string)Application.Current.Resources["Common_Hide"];
         }
 
         private void TranslateAPIBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -158,7 +215,7 @@ namespace LiveCaptionsTranslator
         private void CheckForFirstUse()
         {
             if (Translator.FirstUseFlag)
-                ButtonText.Text = "Hide";
+                ButtonText.Text = (string)Application.Current.Resources["Common_Hide"];
         }
 
         public void LoadAPISetting()

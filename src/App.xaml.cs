@@ -6,10 +6,14 @@ namespace LiveCaptionsTranslator
 {
     public partial class App : Application
     {
-        App()
+        public App()
         {
+            InitializeComponent();
+
             AppDomain.CurrentDomain.ProcessExit += OnProcessExit;
             Translator.Setting?.Save();
+
+            LocalizationManager.ApplyCulture(Translator.Setting?.UiCulture);
 
             Task.Run(() => Translator.SyncLoop());
             Task.Run(() => Translator.TranslateLoop());

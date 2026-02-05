@@ -24,6 +24,7 @@ namespace LiveCaptionsTranslator.models
         private string apiName;
         private string targetLanguage;
         private string prompt;
+        private string uiCulture;
         private string? ignoredUpdateVersion;
 
         private MainWindowState mainWindowState;
@@ -98,6 +99,16 @@ namespace LiveCaptionsTranslator.models
                 OnPropertyChanged("Prompt");
             }
         }
+
+        public string UiCulture
+        {
+            get => uiCulture;
+            set
+            {
+                uiCulture = value;
+                OnPropertyChanged("UiCulture");
+            }
+        }
         public string? IgnoredUpdateVersion
         {
             get => ignoredUpdateVersion;
@@ -165,6 +176,7 @@ namespace LiveCaptionsTranslator.models
         {
             apiName = "Google";
             targetLanguage = "zh-CN";
+            uiCulture = "zh-CN";
             prompt = "As an professional simultaneous interpreter with specialized knowledge in the all fields, " +
                      "you can provide a fluent and precise oral translation for any sentence, even if the sentence is incomplete. " +
                      "Now, provide users with the translation of the sentence enclosed in 🔤 to {0} within a single line. " +
@@ -254,6 +266,9 @@ namespace LiveCaptionsTranslator.models
             }
             else
                 setting = new Setting();
+
+            if (string.IsNullOrWhiteSpace(setting.UiCulture))
+                setting.UiCulture = "zh-CN";
 
             // Ensure all required API configs are present
             foreach (string key in TranslateAPI.TRANSLATE_FUNCTIONS.Keys)

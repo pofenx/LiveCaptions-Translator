@@ -6,7 +6,7 @@
     xmlns:local="clr-namespace:LiveCaptionsTranslator"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
-    Title="接口设置"
+    Title="{DynamicResource SettingWindow_Title}"
     Width="800"
     Height="500"
     ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
@@ -28,7 +28,7 @@
             Height="27"
             ShowMaximize="False">
             <ui:TitleBar.Header>
-                <ui:TextBlock Padding="15,0,0,0" VerticalAlignment="Center">接口设置</ui:TextBlock>
+                <ui:TextBlock Padding="15,0,0,0" VerticalAlignment="Center" Text="{DynamicResource SettingWindow_Title}" />
             </ui:TitleBar.Header>
         </ui:TitleBar>
 
@@ -51,7 +51,7 @@
                             Tag="Prompt">
                             <StackPanel Orientation="Horizontal">
                                 <ui:SymbolIcon Margin="0,0,10,0" Symbol="DocumentCatchUp16" />
-                                <ui:TextBlock VerticalAlignment="Center" Text="提示词（Prompt）" />
+                                <ui:TextBlock VerticalAlignment="Center" Text="{DynamicResource SettingWindow_Prompt}" />
                             </StackPanel>
                         </ui:Button>
 
@@ -107,7 +107,7 @@
                             Click="NavigationButton_Click"
                             Tag="Qwen">
                             <StackPanel Orientation="Horizontal">
-                                <ui:TextBlock VerticalAlignment="Center" Text="千问（Qwen）" />
+                                <ui:TextBlock VerticalAlignment="Center" Text="{DynamicResource ApiName_Qwen}" />
                             </StackPanel>
                         </ui:Button>
 
@@ -197,7 +197,7 @@
                             Margin="0,0,0,10"
                             FontSize="28"
                             FontWeight="Heavy"
-                            Text="接口设置" />
+                            Text="{DynamicResource SettingWindow_Title}" />
 
                         <StackPanel x:Name="AllSettings" Margin="5">
                             <StackPanel x:Name="PromptSection" Margin="20">
@@ -205,14 +205,14 @@
                                     Margin="10"
                                     FontSize="20"
                                     FontWeight="Medium"
-                                    Text="提示词（Prompt）" />
+                                    Text="{DynamicResource SettingWindow_Prompt}" />
                                 <ui:Card Padding="15">
                                     <StackPanel Margin="15,0,15,0" Orientation="Vertical">
                                         <ui:TextBlock Margin="2.5,0,0,5" TextWrapping="Wrap">
-                                            <Run FontWeight="Bold" Text="说明 1：" />
-                                            <Run Text="提示词中的 {0} 代表目标语言，请确保你的提示词里包含 {0}。" />
-                                            <Run FontWeight="Bold" Text="&#x0A;说明 2：" />
-                                            <Run Text="源文本会被 🔤 符号包裹。" />
+                                            <Run FontWeight="Bold" Text="{DynamicResource SettingWindow_PromptInfo_Title1}" />
+                                            <Run Text="{DynamicResource SettingWindow_PromptInfo_1}" />
+                                            <Run FontWeight="Bold" Text="{DynamicResource SettingWindow_PromptInfo_Title2}" />
+                                            <Run Text="{DynamicResource SettingWindow_PromptInfo_2}" />
                                         </ui:TextBlock>
                                         <ui:TextBox
                                             x:Name="PromptTextBox"
@@ -238,7 +238,7 @@
                                                     Margin="0,0,10,0"
                                                     VerticalAlignment="Center"
                                                     FontWeight="Bold"
-                                                    Text="当前配置：" />
+                                                    Text="{DynamicResource ApiConfig_Current}" />
                                                 <ui:Button
                                                     Margin="0,0,10,0"
                                                     Padding="8,4,8,4"
@@ -260,17 +260,17 @@
                                                 <ui:Button
                                                     Margin="0,0,10,0"
                                                     Click="NewButton_Click"
-                                                    Content="新建"
+                                                    Content="{DynamicResource Common_New}"
                                                     Tag="Ollama" />
                                                 <ui:Button
                                                     Margin="0,0,-10,0"
                                                     Click="DeleteButton_Click"
-                                                    Content="删除"
+                                                    Content="{DynamicResource Common_Delete}"
                                                     Tag="Ollama" />
                                                 <ui:Flyout x:Name="OllamaDeleteFlyout">
                                                     <TextBlock
                                                         Width="120"
-                                                        Text="至少需要保留一个配置。"
+                                                        Text="{DynamicResource ApiConfig_KeepOne}"
                                                         TextWrapping="Wrap" />
                                                 </ui:Flyout>
                                             </StackPanel>
@@ -291,7 +291,7 @@
                                                 Grid.Column="0"
                                                 Margin="15,0,0,0"
                                                 Orientation="Vertical">
-                                                <ui:TextBlock Margin="2.5,0,0,5" Text="模型名称" />
+                                                <ui:TextBlock Margin="2.5,0,0,5" Text="{DynamicResource ApiField_ModelName}" />
                                                 <ui:TextBox
                                                     Width="130"
                                                     Height="30"
@@ -304,7 +304,7 @@
                                                 Grid.Column="0"
                                                 Margin="15,10,0,0"
                                                 Orientation="Vertical">
-                                                <ui:TextBlock Margin="2.5,0,0,5" Text="温度（Temperature）" />
+                                                <ui:TextBlock Margin="2.5,0,0,5" Text="{DynamicResource ApiField_Temperature}" />
                                                 <ui:NumberBox
                                                     Width="130"
                                                     Height="30"
@@ -323,12 +323,12 @@
                                                 Margin="15,0,0,0"
                                                 Orientation="Vertical">
                                                 <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                                                    <ui:TextBlock Margin="2.5,0,0,5" Text="接口地址（API Url）" />
+                                                    <ui:TextBlock Margin="2.5,0,0,5" Text="{DynamicResource ApiField_ApiUrl}" />
                                                     <ui:Flyout x:Name="OllamaAPIUrlInfoFlyout">
                                                         <ui:TextBlock Width="170" TextWrapping="Wrap">
-                                                            <Run Text="无需手动添加 " />
+                                                            <Run Text="{DynamicResource ApiField_ApiUrlInfo_Ollama_1}" />
                                                             <Run FontWeight="Bold" Text="`api/chat`" />
-                                                            <Run Text=" 后缀。" />
+                                                            <Run Text="{DynamicResource ApiField_ApiUrlInfo_Ollama_2}" />
                                                         </ui:TextBlock>
                                                     </ui:Flyout>
                                                     <Button
@@ -371,7 +371,7 @@
                                                     Margin="0,0,10,0"
                                                     VerticalAlignment="Center"
                                                     FontWeight="Bold"
-                                                    Text="当前配置：" />
+                                                    Text="{DynamicResource ApiConfig_Current}" />
                                                 <ui:Button
                                                     Margin="0,0,10,0"
                                                     Padding="8,4,8,4"
@@ -393,17 +393,17 @@
                                                 <ui:Button
                                                     Margin="0,0,10,0"
                                                     Click="NewButton_Click"
-                                                    Content="新建"
+                                                    Content="{DynamicResource Common_New}"
                                                     Tag="OpenAI" />
                                                 <ui:Button
                                                     Margin="0,0,-10,0"
                                                     Click="DeleteButton_Click"
-                                                    Content="删除"
+                                                    Content="{DynamicResource Common_Delete}"
                                                     Tag="OpenAI" />
                                                 <ui:Flyout x:Name="OpenAIDeleteFlyout">
                                                     <TextBlock
                                                         Width="120"
-                                                        Text="至少需要保留一个配置。"
+                                                        Text="{DynamicResource ApiConfig_KeepOne}"
                                                         TextWrapping="Wrap" />
                                                 </ui:Flyout>
                                             </StackPanel>
@@ -424,7 +424,7 @@
                                                 Grid.Column="0"
                                                 Margin="15,0,0,0"
                                                 Orientation="Vertical">
-                                                <ui:TextBlock Margin="2.5,0,0,5" Text="模型名称" />
+                                                <ui:TextBlock Margin="2.5,0,0,5" Text="{DynamicResource ApiField_ModelName}" />
                                                 <ui:TextBox
                                                     Width="130"
                                                     Height="30"
@@ -437,7 +437,7 @@
                                                 Grid.Column="0"
                                                 Margin="15,10,0,0"
                                                 Orientation="Vertical">
-                                                <ui:TextBlock Margin="2.5,0,0,5" Text="温度（Temperature）" />
+                                                <ui:TextBlock Margin="2.5,0,0,5" Text="{DynamicResource ApiField_Temperature}" />
                                                 <ui:NumberBox
                                                     Width="130"
                                                     Height="30"
@@ -456,14 +456,14 @@
                                                 Margin="15,0,0,0"
                                                 Orientation="Vertical">
                                                 <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                                                    <ui:TextBlock Margin="2.5,0,0,5" Text="接口地址（API Url）" />
+                                                    <ui:TextBlock Margin="2.5,0,0,5" Text="{DynamicResource ApiField_ApiUrl}" />
                                                     <ui:Flyout x:Name="OpenAIAPIUrlInfoFlyout">
                                                         <ui:TextBlock Width="300" TextWrapping="Wrap">
-                                                            <Run Text="请使用完整接口地址（通常以 " />
+                                                            <Run Text="{DynamicResource ApiField_ApiUrlInfo_OpenAI_1}" />
                                                             <Run FontWeight="Bold" Text="`v1/chat/completions`" />
-                                                            <Run Text=" 结尾），而不是仅以 " />
+                                                            <Run Text="{DynamicResource ApiField_ApiUrlInfo_OpenAI_2}" />
                                                             <Run FontWeight="Bold" Text="`v1`" />
-                                                            <Run Text=" 结尾的基础地址。" />
+                                                            <Run Text="{DynamicResource ApiField_ApiUrlInfo_OpenAI_3}" />
                                                         </ui:TextBlock>
                                                     </ui:Flyout>
                                                     <Button
@@ -491,7 +491,7 @@
                                                 Grid.Column="1"
                                                 Margin="15,10,0,0"
                                                 Orientation="Vertical">
-                                                <ui:TextBlock Margin="2.5,0,0,5" Text="API 密钥（API Key）" />
+                                                <ui:TextBlock Margin="2.5,0,0,5" Text="{DynamicResource ApiField_ApiKey}" />
                                                 <ui:TextBox
                                                     Width="200"
                                                     Height="30"
@@ -518,7 +518,7 @@
                                                     Margin="0,0,10,0"
                                                     VerticalAlignment="Center"
                                                     FontWeight="Bold"
-                                                    Text="当前配置：" />
+                                                    Text="{DynamicResource ApiConfig_Current}" />
                                                 <ui:Button
                                                     Margin="0,0,10,0"
                                                     Padding="8,4,8,4"
@@ -540,17 +540,17 @@
                                                 <ui:Button
                                                     Margin="0,0,10,0"
                                                     Click="NewButton_Click"
-                                                    Content="新建"
+                                                    Content="{DynamicResource Common_New}"
                                                     Tag="OpenRouter" />
                                                 <ui:Button
                                                     Margin="0,0,-10,0"
                                                     Click="DeleteButton_Click"
-                                                    Content="删除"
+                                                    Content="{DynamicResource Common_Delete}"
                                                     Tag="OpenRouter" />
                                                 <ui:Flyout x:Name="OpenRouterDeleteFlyout">
                                                     <TextBlock
                                                         Width="120"
-                                                        Text="至少需要保留一个配置。"
+                                                        Text="{DynamicResource ApiConfig_KeepOne}"
                                                         TextWrapping="Wrap" />
                                                 </ui:Flyout>
                                             </StackPanel>
@@ -571,7 +571,7 @@
                                                 Grid.Column="0"
                                                 Margin="15,0,0,0"
                                                 Orientation="Vertical">
-                                                <ui:TextBlock Margin="2.5,0,0,5" Text="模型名称" />
+                                                <ui:TextBlock Margin="2.5,0,0,5" Text="{DynamicResource ApiField_ModelName}" />
                                                 <ui:TextBox
                                                     Width="130"
                                                     Height="30"
@@ -584,7 +584,7 @@
                                                 Grid.Column="0"
                                                 Margin="15,10,0,0"
                                                 Orientation="Vertical">
-                                                <ui:TextBlock Margin="2.5,0,0,5" Text="温度（Temperature）" />
+                                                <ui:TextBlock Margin="2.5,0,0,5" Text="{DynamicResource ApiField_Temperature}" />
                                                 <ui:NumberBox
                                                     Width="130"
                                                     Height="30"
@@ -602,7 +602,7 @@
                                                 Grid.Column="1"
                                                 Margin="15,0,0,0"
                                                 Orientation="Vertical">
-                                                <ui:TextBlock Margin="2.5,0,0,5" Text="API 密钥（API Key）" />
+                                                <ui:TextBlock Margin="2.5,0,0,5" Text="{DynamicResource ApiField_ApiKey}" />
                                                 <ui:TextBox
                                                     Width="200"
                                                     Height="30"
@@ -620,7 +620,7 @@
                                     Margin="10"
                                     FontSize="20"
                                     FontWeight="Medium"
-                                    Text="千问（Qwen）" />
+                                    Text="{DynamicResource ApiName_Qwen}" />
 
                                 <ui:Card Padding="15">
                                     <StackPanel>
@@ -630,7 +630,7 @@
                                                     Margin="0,0,10,0"
                                                     VerticalAlignment="Center"
                                                     FontWeight="Bold"
-                                                    Text="当前配置：" />
+                                                    Text="{DynamicResource ApiConfig_Current}" />
                                                 <ui:Button
                                                     Margin="0,0,10,0"
                                                     Padding="8,4,8,4"
@@ -652,17 +652,17 @@
                                                 <ui:Button
                                                     Margin="0,0,10,0"
                                                     Click="NewButton_Click"
-                                                    Content="新建"
+                                                    Content="{DynamicResource Common_New}"
                                                     Tag="Qwen" />
                                                 <ui:Button
                                                     Margin="0,0,-10,0"
                                                     Click="DeleteButton_Click"
-                                                    Content="删除"
+                                                    Content="{DynamicResource Common_Delete}"
                                                     Tag="Qwen" />
                                                 <ui:Flyout x:Name="QwenDeleteFlyout">
                                                     <TextBlock
                                                         Width="120"
-                                                        Text="至少需要保留一个配置。"
+                                                        Text="{DynamicResource ApiConfig_KeepOne}"
                                                         TextWrapping="Wrap" />
                                                 </ui:Flyout>
                                             </StackPanel>
@@ -683,7 +683,7 @@
                                                 Grid.Column="0"
                                                 Margin="15,0,0,0"
                                                 Orientation="Vertical">
-                                                <ui:TextBlock Margin="2.5,0,0,5" Text="模型名称" />
+                                                <ui:TextBlock Margin="2.5,0,0,5" Text="{DynamicResource ApiField_ModelName}" />
                                                 <ui:TextBox
                                                     Width="130"
                                                     Height="30"
@@ -696,7 +696,7 @@
                                                 Grid.Column="0"
                                                 Margin="15,10,0,0"
                                                 Orientation="Vertical">
-                                                <ui:TextBlock Margin="2.5,0,0,5" Text="温度（Temperature）" />
+                                                <ui:TextBlock Margin="2.5,0,0,5" Text="{DynamicResource ApiField_Temperature}" />
                                                 <ui:NumberBox
                                                     Width="130"
                                                     Height="30"
@@ -715,12 +715,12 @@
                                                 Margin="15,0,0,0"
                                                 Orientation="Vertical">
                                                 <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                                                    <ui:TextBlock Margin="2.5,0,0,5" Text="接口地址（API Url）" />
+                                                    <ui:TextBlock Margin="2.5,0,0,5" Text="{DynamicResource ApiField_ApiUrl}" />
                                                     <ui:Flyout x:Name="QwenAPIUrlInfoFlyout">
                                                         <ui:TextBlock Width="300" TextWrapping="Wrap">
-                                                            <Run Text="通义千问使用 DashScope OpenAI 兼容接口，默认地址为 " />
+                                                            <Run Text="{DynamicResource ApiField_ApiUrlInfo_Qwen_1}" />
                                                             <Run FontWeight="Bold" Text="https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions" />
-                                                            <Run Text="。" />
+                                                            <Run Text="{DynamicResource ApiField_ApiUrlInfo_Qwen_2}" />
                                                         </ui:TextBlock>
                                                     </ui:Flyout>
                                                     <Button
@@ -748,7 +748,7 @@
                                                 Grid.Column="1"
                                                 Margin="15,10,0,0"
                                                 Orientation="Vertical">
-                                                <ui:TextBlock Margin="2.5,0,0,5" Text="API 密钥（API Key）" />
+                                                <ui:TextBlock Margin="2.5,0,0,5" Text="{DynamicResource ApiField_ApiKey}" />
                                                 <ui:TextBox
                                                     Width="200"
                                                     Height="30"
@@ -775,7 +775,7 @@
                                                     Margin="0,0,10,0"
                                                     VerticalAlignment="Center"
                                                     FontWeight="Bold"
-                                                    Text="当前配置：" />
+                                                    Text="{DynamicResource ApiConfig_Current}" />
                                                 <ui:Button
                                                     Margin="0,0,10,0"
                                                     Padding="8,4,8,4"
@@ -797,17 +797,17 @@
                                                 <ui:Button
                                                     Margin="0,0,10,0"
                                                     Click="NewButton_Click"
-                                                    Content="新建"
+                                                    Content="{DynamicResource Common_New}"
                                                     Tag="DeepL" />
                                                 <ui:Button
                                                     Margin="0,0,-10,0"
                                                     Click="DeleteButton_Click"
-                                                    Content="删除"
+                                                    Content="{DynamicResource Common_Delete}"
                                                     Tag="DeepL" />
                                                 <ui:Flyout x:Name="DeepLDeleteFlyout">
                                                     <TextBlock
                                                         Width="120"
-                                                        Text="至少需要保留一个配置。"
+                                                        Text="{DynamicResource ApiConfig_KeepOne}"
                                                         TextWrapping="Wrap" />
                                                 </ui:Flyout>
                                             </StackPanel>
@@ -826,7 +826,7 @@
                                                 Grid.Row="0"
                                                 Margin="15,0,0,0"
                                                 Orientation="Vertical">
-                                                <ui:TextBlock Margin="2.5,0,0,5" Text="接口地址（API Url）" />
+                                                <ui:TextBlock Margin="2.5,0,0,5" Text="{DynamicResource ApiField_ApiUrl}" />
                                                 <ui:TextBox
                                                     Width="200"
                                                     Height="30"
@@ -838,7 +838,7 @@
                                                 Grid.Row="1"
                                                 Margin="15,10,0,0"
                                                 Orientation="Vertical">
-                                                <ui:TextBlock Margin="2.5,0,0,5" Text="API 密钥（API Key）" />
+                                                <ui:TextBlock Margin="2.5,0,0,5" Text="{DynamicResource ApiField_ApiKey}" />
                                                 <ui:TextBox
                                                     Width="200"
                                                     Height="30"
@@ -865,7 +865,7 @@
                                                     Margin="0,0,10,0"
                                                     VerticalAlignment="Center"
                                                     FontWeight="Bold"
-                                                    Text="当前配置：" />
+                                                    Text="{DynamicResource ApiConfig_Current}" />
                                                 <ui:Button
                                                     Margin="0,0,10,0"
                                                     Padding="8,4,8,4"
@@ -887,17 +887,17 @@
                                                 <ui:Button
                                                     Margin="0,0,10,0"
                                                     Click="NewButton_Click"
-                                                    Content="新建"
+                                                    Content="{DynamicResource Common_New}"
                                                     Tag="Youdao" />
                                                 <ui:Button
                                                     Margin="0,0,-10,0"
                                                     Click="DeleteButton_Click"
-                                                    Content="删除"
+                                                    Content="{DynamicResource Common_Delete}"
                                                     Tag="Youdao" />
                                                 <ui:Flyout x:Name="YoudaoDeleteFlyout">
                                                     <TextBlock
                                                         Width="120"
-                                                        Text="至少需要保留一个配置。"
+                                                        Text="{DynamicResource ApiConfig_KeepOne}"
                                                         TextWrapping="Wrap" />
                                                 </ui:Flyout>
                                             </StackPanel>
@@ -918,7 +918,7 @@
                                                 Grid.Column="0"
                                                 Margin="15,0,0,0"
                                                 Orientation="Vertical">
-                                                <ui:TextBlock Margin="2.5,0,0,5" Text="接口地址（API Url）" />
+                                                <ui:TextBlock Margin="2.5,0,0,5" Text="{DynamicResource ApiField_ApiUrl}" />
                                                 <ui:TextBox
                                                     Width="200"
                                                     Height="30"
@@ -931,7 +931,7 @@
                                                 Grid.Column="0"
                                                 Margin="15,10,0,0"
                                                 Orientation="Vertical">
-                                                <ui:TextBlock Margin="2.5,0,0,5" Text="APP Key" />
+                                                <ui:TextBlock Margin="2.5,0,0,5" Text="{DynamicResource ApiField_AppKey}" />
                                                 <ui:TextBox
                                                     Width="200"
                                                     Height="30"
@@ -944,7 +944,7 @@
                                                 Grid.Column="1"
                                                 Margin="15,10,0,0"
                                                 Orientation="Vertical">
-                                                <ui:TextBlock Margin="2.5,0,0,5" Text="APP Secret" />
+                                                <ui:TextBlock Margin="2.5,0,0,5" Text="{DynamicResource ApiField_AppSecret}" />
                                                 <ui:TextBox
                                                     Width="200"
                                                     Height="30"
@@ -972,7 +972,7 @@
                                                     Margin="0,0,10,0"
                                                     VerticalAlignment="Center"
                                                     FontWeight="Bold"
-                                                    Text="当前配置：" />
+                                                    Text="{DynamicResource ApiConfig_Current}" />
                                                 <ui:Button
                                                     Margin="0,0,10,0"
                                                     Padding="8,4,8,4"
@@ -994,17 +994,17 @@
                                                 <ui:Button
                                                     Margin="0,0,10,0"
                                                     Click="NewButton_Click"
-                                                    Content="新建"
+                                                    Content="{DynamicResource Common_New}"
                                                     Tag="MTranServer" />
                                                 <ui:Button
                                                     Margin="0,0,-10,0"
                                                     Click="DeleteButton_Click"
-                                                    Content="删除"
+                                                    Content="{DynamicResource Common_Delete}"
                                                     Tag="MTranServer" />
                                                 <ui:Flyout x:Name="MTranServerDeleteFlyout">
                                                     <TextBlock
                                                         Width="120"
-                                                        Text="至少需要保留一个配置。"
+                                                        Text="{DynamicResource ApiConfig_KeepOne}"
                                                         TextWrapping="Wrap" />
                                                 </ui:Flyout>
                                             </StackPanel>
@@ -1025,7 +1025,7 @@
                                                 Grid.Column="0"
                                                 Margin="15,10,0,0"
                                                 Orientation="Vertical">
-                                                <ui:TextBlock Margin="2.5,0,0,5" Text="源语言（Source Language）" />
+                                                <ui:TextBlock Margin="2.5,0,0,5" Text="{DynamicResource ApiField_SourceLanguage}" />
                                                 <ComboBox
                                                     Width="130"
                                                     Height="30"
@@ -1045,7 +1045,7 @@
                                                 Grid.Column="1"
                                                 Margin="15,10,0,0"
                                                 Orientation="Vertical">
-                                                <ui:TextBlock Margin="2.5,0,0,5" Text="接口地址（API Url）" />
+                                                <ui:TextBlock Margin="2.5,0,0,5" Text="{DynamicResource ApiField_ApiUrl}" />
                                                 <ui:TextBox
                                                     Width="200"
                                                     Height="30"
@@ -1058,7 +1058,7 @@
                                                 Grid.Column="1"
                                                 Margin="15,10,0,0"
                                                 Orientation="Vertical">
-                                                <ui:TextBlock Margin="2.5,0,0,5" Text="API 密钥（API Key）" />
+                                                <ui:TextBlock Margin="2.5,0,0,5" Text="{DynamicResource ApiField_ApiKey}" />
                                                 <ui:TextBox
                                                     Width="200"
                                                     Height="30"
@@ -1085,7 +1085,7 @@
                                                     Margin="0,0,10,0"
                                                     VerticalAlignment="Center"
                                                     FontWeight="Bold"
-                                                    Text="当前配置：" />
+                                                    Text="{DynamicResource ApiConfig_Current}" />
                                                 <ui:Button
                                                     Margin="0,0,10,0"
                                                     Padding="8,4,8,4"
@@ -1107,17 +1107,17 @@
                                                 <ui:Button
                                                     Margin="0,0,10,0"
                                                     Click="NewButton_Click"
-                                                    Content="新建"
+                                                    Content="{DynamicResource Common_New}"
                                                     Tag="Baidu" />
                                                 <ui:Button
                                                     Margin="0,0,-10,0"
                                                     Click="DeleteButton_Click"
-                                                    Content="删除"
+                                                    Content="{DynamicResource Common_Delete}"
                                                     Tag="Baidu" />
                                                 <ui:Flyout x:Name="BaiduDeleteFlyout">
                                                     <TextBlock
                                                         Width="120"
-                                                        Text="至少需要保留一个配置。"
+                                                        Text="{DynamicResource ApiConfig_KeepOne}"
                                                         TextWrapping="Wrap" />
                                                 </ui:Flyout>
                                             </StackPanel>
@@ -1138,7 +1138,7 @@
                                                 Grid.Column="0"
                                                 Margin="15,0,0,0"
                                                 Orientation="Vertical">
-                                                <ui:TextBlock Margin="2.5,0,0,5" Text="接口地址（API Url）" />
+                                                <ui:TextBlock Margin="2.5,0,0,5" Text="{DynamicResource ApiField_ApiUrl}" />
                                                 <ui:TextBox
                                                     Width="200"
                                                     Height="30"
@@ -1151,7 +1151,7 @@
                                                 Grid.Column="0"
                                                 Margin="15,10,0,0"
                                                 Orientation="Vertical">
-                                                <ui:TextBlock Margin="2.5,0,0,5" Text="APP ID" />
+                                                <ui:TextBlock Margin="2.5,0,0,5" Text="{DynamicResource ApiField_AppId}" />
                                                 <ui:TextBox
                                                     Width="200"
                                                     Height="30"
@@ -1191,7 +1191,7 @@
                                                     Margin="0,0,10,0"
                                                     VerticalAlignment="Center"
                                                     FontWeight="Bold"
-                                                    Text="Current Config: " />
+                                                    Text="{DynamicResource ApiConfig_Current}" />
                                                 <ui:Button
                                                     Margin="0,0,10,0"
                                                     Padding="8,4,8,4"
@@ -1213,17 +1213,17 @@
                                                 <ui:Button
                                                     Margin="0,0,10,0"
                                                     Click="NewButton_Click"
-                                                    Content="New"
+                                                    Content="{DynamicResource Common_New}"
                                                     Tag="LibreTranslate" />
                                                 <ui:Button
                                                     Margin="0,0,-10,0"
                                                     Click="DeleteButton_Click"
-                                                    Content="Delete"
+                                                    Content="{DynamicResource Common_Delete}"
                                                     Tag="LibreTranslate" />
                                                 <ui:Flyout x:Name="LibreTranslateDeleteFlyout">
                                                     <TextBlock
                                                         Width="120"
-                                                        Text="You must keep at least one config."
+                                                        Text="{DynamicResource ApiConfig_KeepOne}"
                                                         TextWrapping="Wrap" />
                                                 </ui:Flyout>
                                             </StackPanel>
@@ -1244,7 +1244,7 @@
                                                 Grid.Column="1"
                                                 Margin="15,10,0,0"
                                                 Orientation="Vertical">
-                                                <ui:TextBlock Margin="2.5,0,0,5" Text="API Url" />
+                                                <ui:TextBlock Margin="2.5,0,0,5" Text="{DynamicResource ApiField_ApiUrl}" />
                                                 <ui:TextBox
                                                     Width="200"
                                                     Height="30"
@@ -1257,7 +1257,7 @@
                                                 Grid.Column="1"
                                                 Margin="15,10,0,0"
                                                 Orientation="Vertical">
-                                                <ui:TextBlock Margin="2.5,0,0,5" Text="API 密钥（API Key）" />
+                                                <ui:TextBlock Margin="2.5,0,0,5" Text="{DynamicResource ApiField_ApiKey}" />
                                                 <ui:TextBox
                                                     Width="200"
                                                     Height="30"

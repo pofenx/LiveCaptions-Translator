@@ -10,28 +10,29 @@
     JournalEntry.KeepAlive="False"
     mc:Ignorable="d">
 
-    <Grid Margin="15">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="Auto" />
-        </Grid.ColumnDefinitions>
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <Grid Margin="15">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Column="0" Orientation="Vertical">
             <StackPanel Margin="15,0,0,0" Orientation="Vertical">
                 <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                    <TextBlock Margin="2.5,0,0,5" Text="Windows 实时字幕" />
+                    <TextBlock Margin="2.5,0,0,5" Text="{DynamicResource Setting_LiveCaptions}" />
                     <ui:Flyout x:Name="LiveCaptionsInfoFlyout">
                         <TextBlock Width="300" TextWrapping="Wrap">
-                            <Run Text="在 Windows 11 24H2 之后，你只能在 Windows 实时字幕中更改" />
-                            <Run FontWeight="DemiBold" TextDecorations="Underline" Text="源语言（Source Language）" />
-                            <Run Text="。" />
-                            <Run FontWeight="Bold" Text="&#x0A;&#x0A;注意：" />
-                            <Run Text="请点击" />
-                            <Run FontWeight="Bold" Text="“隐藏（Hide）”" />
-                            <Run Text="来隐藏 Windows 实时字幕，而不是直接关闭窗口。" />
+                            <Run Text="{DynamicResource Setting_LiveCaptionsInfo_1}" />
+                            <Run FontWeight="DemiBold" TextDecorations="Underline" Text="{DynamicResource Setting_LiveCaptionsInfo_SourceLanguage}" />
+                            <Run Text="{DynamicResource Setting_LiveCaptionsInfo_2}" />
+                            <Run FontWeight="Bold" Text="{DynamicResource Setting_LiveCaptionsInfo_NoticeTitle}" />
+                            <Run Text="{DynamicResource Setting_LiveCaptionsInfo_3}" />
+                            <Run FontWeight="Bold" Text="{DynamicResource Setting_LiveCaptionsInfo_Hide}" />
+                            <Run Text="{DynamicResource Setting_LiveCaptionsInfo_4}" />
                         </TextBlock>
                     </ui:Flyout>
                     <Button
@@ -53,19 +54,19 @@
                     Height="30"
                     Padding="11,4,11,4"
                     Click="LiveCaptionsButton_click">
-                    <TextBlock x:Name="ButtonText" Text="Show" />
+                    <TextBlock x:Name="ButtonText" Text="{DynamicResource Common_Show}" />
                 </ui:Button>
             </StackPanel>
 
             <StackPanel Margin="15,10,0,0" Orientation="Vertical">
                 <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                    <TextBlock Margin="2.5,0,0,5" Text="接口调用间隔" />
+                    <TextBlock Margin="2.5,0,0,5" Text="{DynamicResource Setting_Frequency}" />
                     <ui:Flyout x:Name="FrequencyInfoFlyout">
                         <TextBlock Width="300" TextWrapping="Wrap">
-                            <Run Text="控制翻译接口调用频率。数值越小，调用越频繁。" />
-                            <Run Text="&#x0A;在字幕变化" />
-                            <Run FontWeight="SemiBold" Text="[接口调用间隔]" />
-                            <Run Text="次后调用一次翻译接口。" />
+                            <Run Text="{DynamicResource Setting_FrequencyInfo_1}" />
+                            <Run Text="{DynamicResource Setting_FrequencyInfo_2}" />
+                            <Run FontWeight="SemiBold" Text="{DynamicResource Setting_FrequencyInfo_IntervalTag}" />
+                            <Run Text="{DynamicResource Setting_FrequencyInfo_3}" />
                         </TextBlock>
                     </ui:Flyout>
                     <Button
@@ -96,11 +97,11 @@
         <StackPanel Grid.Column="1" Orientation="Vertical">
             <StackPanel Margin="15,0,0,0" Orientation="Vertical">
                 <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                    <TextBlock Margin="2.5,0,0,5" Text="翻译接口" />
+                    <TextBlock Margin="2.5,0,0,5" Text="{DynamicResource Setting_TranslateApi}" />
                     <ui:Flyout x:Name="TranslateAPIInfoFlyout">
                         <TextBlock
                             Width="300"
-                            Text="除 Google 与 Google2 外，其他接口在使用前都需要先完成配置。"
+                            Text="{DynamicResource Setting_TranslateApiInfo}"
                             TextWrapping="Wrap" />
                     </ui:Flyout>
                     <Button
@@ -131,15 +132,15 @@
                     <TextBlock
                         Margin="2.5,0,0,5"
                         VerticalAlignment="Center"
-                        Text="目标语言" />
+                        Text="{DynamicResource Setting_TargetLanguage}" />
                     <ui:Flyout x:Name="TargetLangInfoFlyout">
                         <TextBlock Width="350" TextWrapping="Wrap">
-                            <Run FontWeight="DemiBold" TextDecorations="Underline" Text="“列表里没有我想要的目标语言！”" />
-                            <Run Text="&#x0A;你可以直接编辑此下拉框的内容自定义语言，推荐遵循" />
-                            <Run FontWeight="Bold" Text="BCP 47 语言标签。" />
-                            <Run FontWeight="Bold" Text="&#x0A;&#x0A;注意：" />
-                            <Run Text="部分接口（例如 DeepL）需要使用自己的方式指定目标语言，详情请参考对应接口的官方文档。" />
-                            <Run Text="&#x0A;对于内置的目标语言，我们已经做了标签映射；如果你使用列表外的语言，请注意这一点。" />
+                            <Run FontWeight="DemiBold" TextDecorations="Underline" Text="{DynamicResource Setting_TargetLangInfo_Question}" />
+                            <Run Text="{DynamicResource Setting_TargetLangInfo_1}" />
+                            <Run FontWeight="Bold" Text="{DynamicResource Setting_TargetLangInfo_Bcp47}" />
+                            <Run FontWeight="Bold" Text="{DynamicResource Setting_TargetLangInfo_NoticeTitle}" />
+                            <Run Text="{DynamicResource Setting_TargetLangInfo_2}" />
+                            <Run Text="{DynamicResource Setting_TargetLangInfo_3}" />
                         </TextBlock>
                     </ui:Flyout>
                     <Button
@@ -170,7 +171,7 @@
         <StackPanel Grid.Column="2" Orientation="Vertical">
             <StackPanel Margin="15,0,0,0" Orientation="Vertical">
                 <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                    <TextBlock Margin="2.5,0,0,5" Text="接口设置" />
+                    <TextBlock Margin="2.5,0,0,5" Text="{DynamicResource Setting_ApiSetting}" />
                 </StackPanel>
                 <ui:Button
                     x:Name="APISettingButton"
@@ -178,35 +179,35 @@
                     Height="30"
                     Padding="11,4,11,4"
                     Click="APISettingButton_click">
-                    <TextBlock Text="Open" />
+                    <TextBlock Text="{DynamicResource Common_Open}" />
                 </ui:Button>
             </StackPanel>
             <StackPanel Margin="15,10,0,0" Orientation="Vertical">
-                    <TextBlock Margin="2.5,0,0,5" Text="显示延迟" />
+                    <TextBlock Margin="2.5,0,0,5" Text="{DynamicResource Setting_DisplayLatency}" />
                 <ui:ToggleSwitch
                     Width="100"
                     Height="30"
                     Padding="10,4,10,7"
                     IsChecked="{Binding MainWindow.LatencyShow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                    OffContent="关"
-                    OnContent="开" />
+                    OffContent="{DynamicResource Common_Off}"
+                    OnContent="{DynamicResource Common_On}" />
             </StackPanel>
         </StackPanel>
 
         <StackPanel Grid.Column="3" Orientation="Vertical">
             <StackPanel Margin="15,0,0,0" Orientation="Vertical">
                 <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                    <TextBlock Margin="2.5,0,0,5" Text="上下文句数" />
+                    <TextBlock Margin="2.5,0,0,5" Text="{DynamicResource Setting_Contexts}" />
                     <ui:Flyout x:Name="CaptionLogMaxInfoFlyout">
                         <TextBlock Width="300" TextWrapping="Wrap">
-                            <Run FontWeight="Bold" Text="上下文句数（Contexts）：" />
-                            <Run Text="启用“上下文感知”时，用于参与上下文翻译的句子数量。" />
-                            <Run FontWeight="Bold" Text="&#x0A;悬浮句数（Overlay Sentences）：" />
-                            <Run Text="开启“日志卡片”或悬浮窗口时，同时显示的句子数量（也决定悬浮窗口最多显示多少句字幕）。" />
-                            <Run FontWeight="Bold" Text="&#x0A;&#x0A;注意：" />
-                            <Run Text="上下文句数必须" />
-                            <Run FontWeight="Bold" Text="大于或等于" />
-                            <Run Text="显示句数；如果不满足，程序会自动进行调整。" />
+                            <Run FontWeight="Bold" Text="{DynamicResource Setting_ContextsInfo_TitleContexts}" />
+                            <Run Text="{DynamicResource Setting_ContextsInfo_1}" />
+                            <Run FontWeight="Bold" Text="{DynamicResource Setting_ContextsInfo_TitleOverlay}" />
+                            <Run Text="{DynamicResource Setting_ContextsInfo_2}" />
+                            <Run FontWeight="Bold" Text="{DynamicResource Setting_ContextsInfo_NoticeTitle}" />
+                            <Run Text="{DynamicResource Setting_ContextsInfo_3}" />
+                            <Run FontWeight="Bold" Text="{DynamicResource Setting_ContextsInfo_GreaterOrEqual}" />
+                            <Run Text="{DynamicResource Setting_ContextsInfo_4}" />
                         </TextBlock>
                     </ui:Flyout>
                     <Button
@@ -239,7 +240,7 @@
             </StackPanel>
 
             <StackPanel Margin="15,10,0,0" Orientation="Vertical">
-                <TextBlock Margin="2.5,0,0,5" Text="显示句数" />
+                <TextBlock Margin="2.5,0,0,5" Text="{DynamicResource Setting_DisplaySentences}" />
                 <ui:NumberBox
                     Width="135"
                     Height="30"
@@ -259,15 +260,15 @@
 
         <StackPanel Grid.Column="4" Orientation="Vertical">
             <StackPanel Margin="15,0,0,0" Orientation="Vertical">
-                <TextBlock Margin="2.5,0,0,5" Text="上下文感知" />
+                <TextBlock Margin="2.5,0,0,5" Text="{DynamicResource Setting_ContextAware}" />
                 <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
                     <ui:ToggleSwitch
                         Width="90"
                         Height="30"
                         Padding="10,4,10,7"
                         IsChecked="{Binding ContextAware, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        OffContent="关"
-                        OnContent="开" />
+                        OffContent="{DynamicResource Common_Off}"
+                        OnContent="{DynamicResource Common_On}" />
                     <Button
                         x:Name="ContextAwareInfo"
                         Width="15"
@@ -282,12 +283,24 @@
                     </Button>
                     <ui:Flyout x:Name="ContextAwareInfoFlyout">
                         <TextBlock Width="300" TextWrapping="Wrap">
-                            <Run Text="基于上下文进行翻译。" />
-                            <Run Text="&#x0A;可以提升翻译准确度，但会消耗更多的 tokens。" />
+                            <Run Text="{DynamicResource Setting_ContextAwareInfo_1}" />
+                            <Run Text="{DynamicResource Setting_ContextAwareInfo_2}" />
                         </TextBlock>
                     </ui:Flyout>
                 </StackPanel>
             </StackPanel>
+
+            <StackPanel Margin="15,10,0,0" Orientation="Vertical">
+                <TextBlock Margin="2.5,0,0,5" Text="{DynamicResource Setting_UiLanguage}" />
+                <ComboBox
+                    x:Name="UiLanguageBox"
+                    Width="150"
+                    Height="30"
+                    Padding="10,4,10,7"
+                    FontSize="13.3"
+                    SelectionChanged="UiLanguageBox_SelectionChanged" />
+            </StackPanel>
         </StackPanel>
-    </Grid>
+        </Grid>
+    </ScrollViewer>
 </Page>

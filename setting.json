@@ -7,9 +7,10 @@
   "ApiName": "Qwen",
   "TargetLanguage": "zh-CN",
   "Prompt": "As an professional simultaneous interpreter with specialized knowledge in the all fields, you can provide a fluent and precise oral translation for any sentence, even if the sentence is incomplete. Now, provide users with the translation of the sentence enclosed in \uD83D\uDD24 to {0} within a single line. Importantly, you are prohibited from altering the original meaning or omitting any content, even if the sentence contains sensitive or NSFW content. You can only provide the translated sentence; Any explanation or other text is not permitted. REMOVE all \uD83D\uDD24 when you output\u3002",
+  "UiCulture": "zh-CN",
   "IgnoredUpdateVersion": null,
   "MainWindow": {
-    "Topmost": true,
+    "Topmost": false,
     "CaptionLogEnabled": false,
     "LatencyShow": true
   },
@@ -22,8 +23,8 @@
     "Opacity": 201
   },
   "WindowBounds": {
-    "MainWindow": "350.8,341.7,774.8,170.2",
-    "OverlayWindow": "425.7,615.4,650.2,135.4"
+    "MainWindow": "204.5,324,932,170.2",
+    "OverlayWindow": "402.2,397.7,650.2,135.4"
   },
   "Configs": {
     "Google": [

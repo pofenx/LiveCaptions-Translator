@@ -1,0 +1,101 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <sys:String x:Key="App_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">Live Captions Translator</sys:String>
+    <sys:String x:Key="Nav_Caption" xmlns:sys="clr-namespace:System;assembly=mscorlib">Captions</sys:String>
+    <sys:String x:Key="Nav_Setting" xmlns:sys="clr-namespace:System;assembly=mscorlib">Settings</sys:String>
+    <sys:String x:Key="Nav_History" xmlns:sys="clr-namespace:System;assembly=mscorlib">History</sys:String>
+
+    <sys:String x:Key="Tooltip_CaptionLog" xmlns:sys="clr-namespace:System;assembly=mscorlib">Caption log cards</sys:String>
+    <sys:String x:Key="Tooltip_LogOnly" xmlns:sys="clr-namespace:System;assembly=mscorlib">Pause translation (log captions only)</sys:String>
+    <sys:String x:Key="Tooltip_Overlay" xmlns:sys="clr-namespace:System;assembly=mscorlib">Overlay window</sys:String>
+    <sys:String x:Key="Tooltip_Topmost" xmlns:sys="clr-namespace:System;assembly=mscorlib">Always on top</sys:String>
+
+    <sys:String x:Key="Welcome_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">Quick Start</sys:String>
+    <sys:String x:Key="Welcome_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">Welcome to Live Captions Translator!</sys:String>
+    <sys:String x:Key="Welcome_Close" xmlns:sys="clr-namespace:System;assembly=mscorlib">I understand and have completed the steps above</sys:String>
+
+    <sys:String x:Key="Setting_LiveCaptions" xmlns:sys="clr-namespace:System;assembly=mscorlib">Windows Live Captions</sys:String>
+    <sys:String x:Key="Setting_Frequency" xmlns:sys="clr-namespace:System;assembly=mscorlib">Request interval</sys:String>
+    <sys:String x:Key="Setting_TranslateApi" xmlns:sys="clr-namespace:System;assembly=mscorlib">Translation API</sys:String>
+    <sys:String x:Key="Setting_TargetLanguage" xmlns:sys="clr-namespace:System;assembly=mscorlib">Target language</sys:String>
+    <sys:String x:Key="Setting_ApiSetting" xmlns:sys="clr-namespace:System;assembly=mscorlib">API settings</sys:String>
+    <sys:String x:Key="Setting_DisplayLatency" xmlns:sys="clr-namespace:System;assembly=mscorlib">Show latency</sys:String>
+    <sys:String x:Key="Setting_Contexts" xmlns:sys="clr-namespace:System;assembly=mscorlib">Context sentences</sys:String>
+    <sys:String x:Key="Setting_DisplaySentences" xmlns:sys="clr-namespace:System;assembly=mscorlib">Display sentences</sys:String>
+    <sys:String x:Key="Setting_ContextAware" xmlns:sys="clr-namespace:System;assembly=mscorlib">Context-aware</sys:String>
+
+    <sys:String x:Key="Setting_LiveCaptionsInfo_1" xmlns:sys="clr-namespace:System;assembly=mscorlib">Since Windows 11 24H2, you can only change</sys:String>
+    <sys:String x:Key="Setting_LiveCaptionsInfo_SourceLanguage" xmlns:sys="clr-namespace:System;assembly=mscorlib">Source Language</sys:String>
+    <sys:String x:Key="Setting_LiveCaptionsInfo_2" xmlns:sys="clr-namespace:System;assembly=mscorlib">in Windows Live Captions.</sys:String>
+    <sys:String x:Key="Setting_LiveCaptionsInfo_NoticeTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">&#x0A;&#x0A;Note:</sys:String>
+    <sys:String x:Key="Setting_LiveCaptionsInfo_3" xmlns:sys="clr-namespace:System;assembly=mscorlib">Please click</sys:String>
+    <sys:String x:Key="Setting_LiveCaptionsInfo_Hide" xmlns:sys="clr-namespace:System;assembly=mscorlib">“Hide”</sys:String>
+    <sys:String x:Key="Setting_LiveCaptionsInfo_4" xmlns:sys="clr-namespace:System;assembly=mscorlib">to hide Windows Live Captions, instead of closing the window.</sys:String>
+
+    <sys:String x:Key="Setting_FrequencyInfo_1" xmlns:sys="clr-namespace:System;assembly=mscorlib">Controls how frequently translation requests are made. Lower values mean more frequent calls.</sys:String>
+    <sys:String x:Key="Setting_FrequencyInfo_2" xmlns:sys="clr-namespace:System;assembly=mscorlib">&#x0A;Call the translation API once after captions change</sys:String>
+    <sys:String x:Key="Setting_FrequencyInfo_IntervalTag" xmlns:sys="clr-namespace:System;assembly=mscorlib">[Request interval]</sys:String>
+    <sys:String x:Key="Setting_FrequencyInfo_3" xmlns:sys="clr-namespace:System;assembly=mscorlib">times.</sys:String>
+
+    <sys:String x:Key="Setting_TranslateApiInfo" xmlns:sys="clr-namespace:System;assembly=mscorlib">Except for Google and Google2, all other APIs must be configured before use.</sys:String>
+
+    <sys:String x:Key="Setting_TargetLangInfo_Question" xmlns:sys="clr-namespace:System;assembly=mscorlib">“My target language is not in the list!”</sys:String>
+    <sys:String x:Key="Setting_TargetLangInfo_1" xmlns:sys="clr-namespace:System;assembly=mscorlib">&#x0A;You can edit the combo box text to define a custom language. We recommend following</sys:String>
+    <sys:String x:Key="Setting_TargetLangInfo_Bcp47" xmlns:sys="clr-namespace:System;assembly=mscorlib">BCP 47 language tags.</sys:String>
+    <sys:String x:Key="Setting_TargetLangInfo_NoticeTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">&#x0A;&#x0A;Note:</sys:String>
+    <sys:String x:Key="Setting_TargetLangInfo_2" xmlns:sys="clr-namespace:System;assembly=mscorlib">Some APIs (e.g., DeepL) require their own way of specifying target languages. See the official documentation.</sys:String>
+    <sys:String x:Key="Setting_TargetLangInfo_3" xmlns:sys="clr-namespace:System;assembly=mscorlib">&#x0A;For built-in target languages, we already map tags. If you use a custom value, keep this in mind.</sys:String>
+
+    <sys:String x:Key="Setting_ContextsInfo_TitleContexts" xmlns:sys="clr-namespace:System;assembly=mscorlib">Contexts:</sys:String>
+    <sys:String x:Key="Setting_ContextsInfo_1" xmlns:sys="clr-namespace:System;assembly=mscorlib">The number of sentences used as context when context-aware translation is enabled.</sys:String>
+    <sys:String x:Key="Setting_ContextsInfo_TitleOverlay" xmlns:sys="clr-namespace:System;assembly=mscorlib">&#x0A;Overlay sentences:</sys:String>
+    <sys:String x:Key="Setting_ContextsInfo_2" xmlns:sys="clr-namespace:System;assembly=mscorlib">How many sentences are shown at the same time in log cards or the overlay window.</sys:String>
+    <sys:String x:Key="Setting_ContextsInfo_NoticeTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">&#x0A;&#x0A;Note:</sys:String>
+    <sys:String x:Key="Setting_ContextsInfo_3" xmlns:sys="clr-namespace:System;assembly=mscorlib">Contexts must be</sys:String>
+    <sys:String x:Key="Setting_ContextsInfo_GreaterOrEqual" xmlns:sys="clr-namespace:System;assembly=mscorlib">greater than or equal to</sys:String>
+    <sys:String x:Key="Setting_ContextsInfo_4" xmlns:sys="clr-namespace:System;assembly=mscorlib">display sentences; otherwise, the app will adjust values automatically.</sys:String>
+
+    <sys:String x:Key="Setting_ContextAwareInfo_1" xmlns:sys="clr-namespace:System;assembly=mscorlib">Translate with context.</sys:String>
+    <sys:String x:Key="Setting_ContextAwareInfo_2" xmlns:sys="clr-namespace:System;assembly=mscorlib">&#x0A;Improves accuracy but consumes more tokens.</sys:String>
+
+    <sys:String x:Key="Common_Show" xmlns:sys="clr-namespace:System;assembly=mscorlib">Show</sys:String>
+    <sys:String x:Key="Common_Hide" xmlns:sys="clr-namespace:System;assembly=mscorlib">Hide</sys:String>
+    <sys:String x:Key="Common_Open" xmlns:sys="clr-namespace:System;assembly=mscorlib">Open</sys:String>
+    <sys:String x:Key="Common_On" xmlns:sys="clr-namespace:System;assembly=mscorlib">On</sys:String>
+    <sys:String x:Key="Common_Off" xmlns:sys="clr-namespace:System;assembly=mscorlib">Off</sys:String>
+
+    <sys:String x:Key="Setting_UiLanguage" xmlns:sys="clr-namespace:System;assembly=mscorlib">UI language</sys:String>
+
+    <sys:String x:Key="SettingWindow_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">API Settings</sys:String>
+    <sys:String x:Key="SettingWindow_Prompt" xmlns:sys="clr-namespace:System;assembly=mscorlib">Prompt</sys:String>
+    <sys:String x:Key="SettingWindow_PromptInfo_Title1" xmlns:sys="clr-namespace:System;assembly=mscorlib">Note 1: </sys:String>
+    <sys:String x:Key="SettingWindow_PromptInfo_1" xmlns:sys="clr-namespace:System;assembly=mscorlib">{0} in the prompt represents the target language. Make sure your prompt includes {0}.</sys:String>
+    <sys:String x:Key="SettingWindow_PromptInfo_Title2" xmlns:sys="clr-namespace:System;assembly=mscorlib">&#x0A;Note 2: </sys:String>
+    <sys:String x:Key="SettingWindow_PromptInfo_2" xmlns:sys="clr-namespace:System;assembly=mscorlib">Source text will be wrapped with the 🔤 symbol.</sys:String>
+
+    <sys:String x:Key="ApiName_Qwen" xmlns:sys="clr-namespace:System;assembly=mscorlib">Qwen</sys:String>
+    <sys:String x:Key="ApiConfig_Current" xmlns:sys="clr-namespace:System;assembly=mscorlib">Current config:</sys:String>
+    <sys:String x:Key="ApiConfig_KeepOne" xmlns:sys="clr-namespace:System;assembly=mscorlib">You must keep at least one config.</sys:String>
+
+    <sys:String x:Key="Common_New" xmlns:sys="clr-namespace:System;assembly=mscorlib">New</sys:String>
+    <sys:String x:Key="Common_Delete" xmlns:sys="clr-namespace:System;assembly=mscorlib">Delete</sys:String>
+
+    <sys:String x:Key="ApiField_ModelName" xmlns:sys="clr-namespace:System;assembly=mscorlib">Model</sys:String>
+    <sys:String x:Key="ApiField_Temperature" xmlns:sys="clr-namespace:System;assembly=mscorlib">Temperature</sys:String>
+    <sys:String x:Key="ApiField_ApiUrl" xmlns:sys="clr-namespace:System;assembly=mscorlib">API URL</sys:String>
+    <sys:String x:Key="ApiField_ApiKey" xmlns:sys="clr-namespace:System;assembly=mscorlib">API key</sys:String>
+    <sys:String x:Key="ApiField_SourceLanguage" xmlns:sys="clr-namespace:System;assembly=mscorlib">Source language</sys:String>
+    <sys:String x:Key="ApiField_AppKey" xmlns:sys="clr-namespace:System;assembly=mscorlib">App key</sys:String>
+    <sys:String x:Key="ApiField_AppSecret" xmlns:sys="clr-namespace:System;assembly=mscorlib">App secret</sys:String>
+    <sys:String x:Key="ApiField_AppId" xmlns:sys="clr-namespace:System;assembly=mscorlib">App ID</sys:String>
+
+    <sys:String x:Key="ApiField_ApiUrlInfo_Ollama_1" xmlns:sys="clr-namespace:System;assembly=mscorlib">No need to add the </sys:String>
+    <sys:String x:Key="ApiField_ApiUrlInfo_Ollama_2" xmlns:sys="clr-namespace:System;assembly=mscorlib"> suffix manually.</sys:String>
+    <sys:String x:Key="ApiField_ApiUrlInfo_OpenAI_1" xmlns:sys="clr-namespace:System;assembly=mscorlib">Please use the full endpoint (usually ending with </sys:String>
+    <sys:String x:Key="ApiField_ApiUrlInfo_OpenAI_2" xmlns:sys="clr-namespace:System;assembly=mscorlib">), not just a base URL ending with </sys:String>
+    <sys:String x:Key="ApiField_ApiUrlInfo_OpenAI_3" xmlns:sys="clr-namespace:System;assembly=mscorlib">.</sys:String>
+    <sys:String x:Key="ApiField_ApiUrlInfo_Qwen_1" xmlns:sys="clr-namespace:System;assembly=mscorlib">Qwen uses the DashScope OpenAI-compatible endpoint. Default URL: </sys:String>
+    <sys:String x:Key="ApiField_ApiUrlInfo_Qwen_2" xmlns:sys="clr-namespace:System;assembly=mscorlib">.</sys:String>
+
+</ResourceDictionary>

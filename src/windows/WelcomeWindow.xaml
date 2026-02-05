@@ -6,7 +6,7 @@
     xmlns:local="clr-namespace:LiveCaptionsTranslator"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
-    Title="快速开始"
+    Title="{DynamicResource Welcome_Title}"
     Width="700"
     Height="490"
     ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
@@ -29,9 +29,7 @@
             ShowMaximize="False"
             ShowMinimize="False">
             <ui:TitleBar.Header>
-                <ui:TextBlock Padding="15,0,0,0" VerticalAlignment="Center">
-                    快速开始
-                </ui:TextBlock>
+                <ui:TextBlock Padding="15,0,0,0" VerticalAlignment="Center" Text="{DynamicResource Welcome_Title}" />
             </ui:TitleBar.Header>
         </ui:TitleBar>
 
@@ -41,28 +39,26 @@
                 HorizontalAlignment="Left"
                 FontSize="24"
                 FontWeight="Bold"
-                Text="欢迎使用 LiveCaptions Translator！"
+                Text="{DynamicResource Welcome_Header}"
                 TextAlignment="Left" />
             <ui:TextBlock
                 Margin="20,10,20,10"
                 TextAlignment="Left"
                 TextWrapping="Wrap">
-                <Run Text="LiveCaptions Translator 基于 Windows 实时字幕功能。" />
+                <Run Text="字幕实时翻译 基于 Windows 实时字幕功能。" />
                 <Run Text="在第一次使用前，请按照下面步骤完成配置：&#x0A;" />
                 <Run Text="&#x0A;1. 打开 Windows 实时字幕，按照系统向导下载本地语音识别组件和语言包。" />
                 <Run Text="&#x0A;2. 在 Windows 实时字幕中点击" />
                 <Run FontWeight="Bold" Text="⚙️ 设置齿轮" />
                 <Run Text="图标，打开设置菜单，并选择" />
                 <Run FontWeight="Bold" Text="“位置 &gt; 覆盖在屏幕上（Overlaid on screen）”" />
-                <Run Text="。&#x0A;3. 在 LiveCaptions Translator 的设置页中点击" />
+                <Run Text="。&#x0A;3. 在 字幕实时翻译 的设置页中点击" />
                 <Run FontWeight="Bold" Text="“隐藏（Hide）”" />
                 <Run Text="按钮来隐藏 Windows 实时字幕窗口。&#x0A;" />
                 <Run Text="&#x0A;程序已自动为你打开设置页并启动 Windows 实时字幕。" />
                 <Run Text="完成上述配置后，你就可以返回主界面，开始享受实时音频翻译功能了。&#x0A;" />
-                <Run Text="&#x0A;了解更多详细说明，请访问我们的 Wiki：" />
-                <Hyperlink NavigateUri="https://github.com/SakiRinn/LiveCaptions-Translator/wiki" RequestNavigate="Hyperlink_RequestNavigate">
-                    https://github.com/SakiRinn/LiveCaptions-Translator/wiki
-                </Hyperlink>
+                <!-- <Run Text="&#x0A;了解更多详细说明，请访问我们的 Wiki：" /> -->
+            
                 <Run FontWeight="Bold" Text="&#x0A;&#x0A;小提示：" />
                 <Run Text="如果需要修改" />
                 <Run FontWeight="DemiBold" TextDecorations="Underline" Text="源语言（Source Language）" />
@@ -74,7 +70,7 @@
                 Padding="30,10,30,10"
                 HorizontalAlignment="Center"
                 Click="CloseButton_Click"
-                Content="我已了解并完成以上配置" />
+                Content="{DynamicResource Welcome_Close}" />
         </StackPanel>
     </Grid>
 </ui:FluentWindow>
